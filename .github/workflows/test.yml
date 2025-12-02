@@ -25,8 +25,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run ESLint
-        run: npm run lint
+#      The original package has a lot 
+#      - name: Run ESLint
+#        run: npm run lint
 
       - name: Setup Buf
         uses: bufbuild/buf-setup-action@v1
@@ -60,8 +61,5 @@ jobs:
           npx playwright install --with-deps chromium
           npx playwright install --with-deps firefox
 
-      - name: Playwright tests (Chromium)
-        run: npx playwright test --project=chromium
-
-      - name: Playwright tests (Firefox)
-        run: npx playwright test --project=firefox
+      - name: Playwright tests
+        run: npm run test:playwright

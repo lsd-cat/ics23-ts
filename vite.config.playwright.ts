@@ -22,6 +22,9 @@ export default mergeConfig(
           {
             browser: "chromium",
           },
+          {
+            browser: "firefox",
+          },
         ],
       },
     },
